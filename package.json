@@ -1,0 +1,22 @@
+{
+  "name": "example-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "app-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#b1225b915dbe4ae0f04a074212c8cb8a516e9172",
+    "app-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#4470a059536daf5ccf639a9fa3bb1602e0088844",
+    "app-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#05c58f07486cf64686ce9e89b49b646a48bcdd8a",
+    "app-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#323361ecfc352302fb5db2d2000bce47ae1f62cc",
+    "winext": "^1.0.0",
+    "bcryptjs": "^2.4.3",
+    "modeller": "../cosmetic-model"
+  }
+}
