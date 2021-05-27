@@ -45,7 +45,7 @@ function BoardService(params = {}) {
         requestId: `${requestId}`
       });
 
-      return { data: [], total: 0 };
+      return { data: data, total: total };
 
     } catch (err) {
       loggerFactory.error(`function getMessageBoards has error : ${err}`, {
