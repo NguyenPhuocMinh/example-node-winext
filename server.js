@@ -1,10 +1,10 @@
 'use strict';
 
 const winext = require('winext');
-const app_logger = require('app-logger');
-const app_repository = require('app-repository');
-const app_runserver = require('app-runserver');
-const app_authorization = require('app-authorization');
+const app_logger = require('winext-logger');
+const app_repository = require('winext-repository');
+const app_runserver = require('winext-runserver');
+const app_authorization = require('winext-authorization');
 const sandbox = require('./config/dev/sandbox');
 
 const app = winext.initializer(sandbox,

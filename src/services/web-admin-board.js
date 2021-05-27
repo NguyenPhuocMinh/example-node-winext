@@ -3,10 +3,9 @@
 const winext = require('winext');
 const Promise = winext.require('bluebird');
 const lodash = winext.require('lodash');
-const dataStore = require('app-repository').dataStore;
 const { isEmpty } = lodash;
-
-function BoardService() {
+function BoardService(params = {}) {
+  const { dataStore } = params;
 
   // get all
   this.getMessageBoards = async function (args, opts = {}) {
@@ -21,8 +20,6 @@ function BoardService() {
       const skip = parseInt(params._start) || 0;
       let limit = parseInt(params._end) || 1000;
       limit = limit - skip;
-      console.log("🚀 ~ file: web-admin-board.js ~ line 53 ~ skip", skip)
-      console.log("🚀 ~ file: web-admin-board.js ~ line 56 ~ limit", limit)
 
       const boards = await dataStore.find({
         type: 'BoardModel',
@@ -48,7 +45,7 @@ function BoardService() {
         requestId: `${requestId}`
       });
 
-      return { data: data, total: total };
+      return { data: [], total: 0 };
 
     } catch (err) {
       loggerFactory.error(`function getMessageBoards has error : ${err}`, {
@@ -83,6 +80,9 @@ function convertDataBoard(board, index) {
     return Promise.resolve();
   }
 };
+BoardService.reference = {
+  dataStore: 'app-repository/dataStore',
+}
 
 exports = module.exports = new BoardService();
 exports.register = BoardService;

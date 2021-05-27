@@ -3,7 +3,7 @@
 const winext = require('winext');
 const Promise = winext.require('bluebird');
 const lodash = winext.require('lodash');
-const jwt = require('app-authorization').jwt;
+const jwt = require('winext-authorization').jwt;
 const bcrypt = require('bcryptjs');
 const dataSecret = require('../../config/data/secret');
 const { isEmpty, get } = lodash;
