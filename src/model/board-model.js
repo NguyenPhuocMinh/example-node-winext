@@ -1,17 +1,20 @@
 'use strict';
 
-const winext = require('winext');
-const mongoose = winext.require('mongoose');
-const Schema = mongoose.Schema;
-
-const BoardSchema = new Schema({
-  registerDate: { type: Date },
-  title: { type: String },
-  name: { type: String },
-  description: { type: String },
-  //filter
-  deleted: { type: Boolean, default: false },
-});
-
-const Board = mongoose.model('BoardModel', BoardSchema, 'boards');
-module.exports = Board;
+module.exports = {
+  name: 'BoardModel',
+  schema: {
+    firstName: { type: String },
+    lastName: { type: String },
+    email: { type: String },
+    password: { type: String },
+    permissions: [String],
+    //filter
+    slug: { type: String },
+    deleted: { type: Boolean, default: false },
+    createdAt: { type: Date },
+    createdBy: { type: String },
+    updatedAt: { type: Date },
+    updatedBy: { type: String },
+  },
+  collection: 'boards'
+}
