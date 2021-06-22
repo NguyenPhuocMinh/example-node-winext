@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports = {
-  name: 'BoardModel',
-  schema: {
+  name: 'UserModel',
+  attributes: {
     firstName: { type: String },
     lastName: { type: String },
     email: { type: String },
@@ -16,5 +16,7 @@ module.exports = {
     updatedAt: { type: Date },
     updatedBy: { type: String },
   },
-  collection: 'boards'
+  options: {
+    collection: 'users'
+  }
 }

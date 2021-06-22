@@ -14,14 +14,14 @@
     "winext-repository",
     "winext-runserver"
   ],
-  "author": "",
+  "author": "Minh Nguyễn",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#2ef20e15aa0e9a9c23436390bdd13d7123e9ee7f",
-    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#323361ecfc352302fb5db2d2000bce47ae1f62cc",
+    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#67c7be8e7c4184d94f289bfdde2e95aa59111632",
+    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#3d4a24e5e883f17dd1bc6c93861a73dd6f36d5ab",
     "winext-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#9b18930b70b62e0381e1d40f4643e381b9f11b52",
-    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#3f43f4d10f550dbce07b965f3b1d2c379a8db766",
-    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#ce21817cff8209a09f41c04a62a0ad2acce81538"
+    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#ff8da209196cb833e83eafd50f0beefb52f5d727",
+    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#46c369078e8e4eccb19d2585877f0db3c6e77e90"
   }
 }

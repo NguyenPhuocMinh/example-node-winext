@@ -7,9 +7,8 @@ const jwt = require('winext-authorization').jwt;
 const bcrypt = require('bcryptjs');
 const dataSecret = require('../../config/data/secret');
 const { isEmpty, get } = lodash;
-
 function UserService(params = {}) {
-  const { dataStore, errorManager } = params;
+  const { dataStore, dataSequelize, errorManager } = params;
   // register user
   this.registerUser = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
@@ -51,6 +50,12 @@ function UserService(params = {}) {
         requestId: `${requestId}`,
         args: args
       });
+
+      // const testSequelize = await dataSequelize.find({
+      //   type: 'UserModel',
+      // })
+      // console.log("🚀 ~ file: web-admin-user.js ~ line 57 ~ testSequelize", testSequelize)
+
       /**
        * get user login
        */
@@ -178,6 +183,7 @@ function UserService(params = {}) {
 
 UserService.reference = {
   dataStore: 'app-repository/dataStore',
+  dataSequelize: 'app-repository/dataSequelize',
   errorManager: 'app-runserver/errorManager'
 }
 

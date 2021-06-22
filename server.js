@@ -26,7 +26,8 @@ const app = winext.initializer(sandbox,
       app_runserver
     },
   ],
-  require('./src/model')
+  require('./src/modelMongo'),
+  require('./src/modelSQL')
 )
 
 if (require.main === module) {

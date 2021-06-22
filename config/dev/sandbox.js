@@ -19,7 +19,6 @@ module.exports = {
             warn: 2,
             data: 3,
             info: 4,
-            underline: 5
           },
           colors: {
             error: 'bold red',
@@ -38,6 +37,23 @@ module.exports = {
           port: '27017',
           name: 'message-board',
         },
+        mysql: {
+          enable: true,
+          host: 'localhost',
+          port: 3306,
+          user: 'root',
+          password: 'Minhroot123!',
+          name: 'message_board',
+          sequelizeOtp: {
+            dialect: 'mysql',
+            pool: {
+              max: 5,
+              min: 0,
+              acquire: 30000,
+              idle: 10000
+            }
+          }
+        }
       },
       app_authorization: {
         enable: true,
