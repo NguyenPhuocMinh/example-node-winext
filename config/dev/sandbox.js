@@ -44,7 +44,7 @@ module.exports = {
           user: 'root',
           password: 'Minhroot123!',
           name: 'message_board',
-          sequelizeOtp: {
+          sequelizeOptions: {
             dialect: 'mysql',
             pool: {
               max: 5,

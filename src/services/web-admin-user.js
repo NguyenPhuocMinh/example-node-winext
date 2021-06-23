@@ -51,10 +51,10 @@ function UserService(params = {}) {
         args: args
       });
 
-      // const testSequelize = await dataSequelize.find({
-      //   type: 'UserModel',
-      // })
-      // console.log("🚀 ~ file: web-admin-user.js ~ line 57 ~ testSequelize", testSequelize)
+      const testSequelize = await dataSequelize.find({
+        type: 'BoardModel',
+      })
+      console.log("🚀 ~ file: web-admin-user.js ~ line 57 ~ testSequelize", testSequelize)
 
       /**
        * get user login
