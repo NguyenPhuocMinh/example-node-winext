@@ -6,7 +6,7 @@ const sandbox = require('./config/dev/sandbox');
 const app = winext.initializer(sandbox,
   [
     'winext-logger',
-    'winext-error-manager1',
+    'winext-error-manager',
     'winext-repository',
     'winext-authorization',
     'winext-runserver'

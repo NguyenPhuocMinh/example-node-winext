@@ -18,12 +18,12 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#2cac570e0d7c13936fe550075395b3e2e2682a04",
-    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#3d4a24e5e883f17dd1bc6c93861a73dd6f36d5ab",
-    "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#dd9ec7efad0a52dff924cafbdf17b771be8d8b5a",
+    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#0ccf2f44d90098bf07f9f4af898503d1c6371674",
+    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#0438f83356a7b5bfb5c5a35e5b61b8e65f99e0e1",
+    "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#98f9cfa60b715fe4ff829336f9fd97130cdaac75",
     "winext-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#9b18930b70b62e0381e1d40f4643e381b9f11b52",
-    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#36a2379c9907cd7f42d9b8fcc5567a01408a517d",
-    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#b7b7350334791844f38cd45a53d551c3e91e14f4",
+    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#fc8713f22100e76b184a299a1187bbe323292ef1",
+    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#91371c6fb74ce46db172b7360d8a4465d8ffffa4",
     "model-mongo": "git+https://github.com/NguyenPhuocMinh/example-model-mongo.git#4b20a6d00f2a1b4b836f9935877d2240f096a685",
     "model-sql": "git+https://github.com/NguyenPhuocMinh/example-model-sql.git#398a19b365d0f31ec073ac0987480b2c82770f0f"
   }
