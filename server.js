@@ -1,33 +1,20 @@
 'use strict';
 
 const winext = require('winext');
-const app_logger = require('winext-logger');
-const app_repository = require('winext-repository');
-const app_runserver = require('winext-runserver');
-const app_authorization = require('winext-authorization');
 const sandbox = require('./config/dev/sandbox');
 
 const app = winext.initializer(sandbox,
   [
-    {
-      name: 'app-logger',
-      app_logger
-    },
-    {
-      name: 'app-repository',
-      app_repository
-    },
-    {
-      name: 'app-authorization',
-      app_authorization
-    },
-    {
-      name: 'app-runserver',
-      app_runserver
-    },
+    'winext-logger',
+    'winext-error-manager1',
+    'winext-repository',
+    'winext-authorization',
+    'winext-runserver'
   ],
-  require('model-mongo'),
-  require('model-sql')
+  {
+    mongo: 'model-mongo',
+    sql: 'model-sql'
+  }
 )
 
 if (require.main === module) {

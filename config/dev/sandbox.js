@@ -11,7 +11,7 @@ const contextPath = '/rest/api';
 module.exports = {
   application: {
     dependencies: {
-      app_logger: {
+      winext_logger: {
         winston: {
           levels: {
             error: 0,
@@ -30,7 +30,7 @@ module.exports = {
         },
         log4js: {}
       },
-      app_repository: {
+      winext_repository: {
         mongoose: {
           enable: true,
           host: 'localhost',
@@ -55,21 +55,23 @@ module.exports = {
           }
         }
       },
-      app_authorization: {
+      winext_authorization: {
         enable: true,
         secretKey: secret.tokenSecret,
         contextPath: contextPath,
         publicPaths: publicPaths,
         protectedPaths: protectedPaths
       },
-      app_runserver: {
+      winext_runserver: {
         enable: false,
         contextPath: contextPath,
         port: 7979,
         host: '0.0.0.0',
       },
+      winext_error_manager: {
+        errorCodes: errorCodes
+      }
     },
     routerMappings: routerMappings,
-    errorCodes: errorCodes
   },
 }
