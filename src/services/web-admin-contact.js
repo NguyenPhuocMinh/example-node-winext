@@ -2,7 +2,6 @@
 
 function ContactService(params = {}) {
   this.contact = async function (args, opts = {}) {
-
     return { message: 'Hello NodeJs' }
   }
 };

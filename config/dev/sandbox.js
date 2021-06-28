@@ -70,8 +70,10 @@ module.exports = {
       },
       winext_error_manager: {
         errorCodes: errorCodes
+      },
+      winext_mapping_store: {
+        routerMappings: routerMappings,
       }
     },
-    routerMappings: routerMappings,
   },
 }

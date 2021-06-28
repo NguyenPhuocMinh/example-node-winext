@@ -184,7 +184,7 @@ function UserService(params = {}) {
 UserService.reference = {
   dataStore: 'app-repository/dataStore',
   dataSequelize: 'app-repository/dataSequelize',
-  errorManager: 'app-runserver/errorManager'
+  errorManager: 'app-error-manager/errorManager'
 }
 
 exports = module.exports = new UserService();
