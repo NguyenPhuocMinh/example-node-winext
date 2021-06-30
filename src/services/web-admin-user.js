@@ -10,7 +10,50 @@ const { isEmpty, get } = lodash;
 function UserService(params = {}) {
   const { dataStore, dataSequelize, errorManager } = params;
 
-  // register user
+  /**
+   * @swagger
+   * /rest/api/user/registers:
+   *   post:
+   *      summary: Register User
+   *      description: Welcome to register user
+   *      requestBody: 
+   *          required: true
+   *          content:
+   *            application/json:
+   *                schema:
+   *                  type: object
+   *                  properties:
+   *                      firstName:
+   *                        type: string
+   *                        default: John
+   *                        required: true
+   *                      lastName:
+   *                        type: string
+   *                        default: Doe
+   *                        required: true
+   *                      email:
+   *                        type: string
+   *                        required: true
+   *                        example: email@gmail.com
+   *                      password:
+   *                        type: string
+   *                        default: 123
+   *                      permissions:
+   *                        type: array
+   *                        item:
+   *                          type: string
+   *                        example: ['ADMIN']
+   *                        default: ['ADMIN']
+   *      responses:
+   *        default:
+   *         description: Register user success
+   */
+
+  /**
+   * REGISTER USER
+   * @param {*} args 
+   * @param {*} opts 
+   */
   this.registerUser = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
 
@@ -68,7 +111,7 @@ function UserService(params = {}) {
    */
 
   /**
-   * Login user
+   * LOGIN USER
    * @param {*} args 
    * @param {*} opts 
    */

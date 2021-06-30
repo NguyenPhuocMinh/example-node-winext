@@ -7,7 +7,38 @@ const { isEmpty } = lodash;
 function BoardService(params = {}) {
   const { dataStore } = params;
 
-  // get all
+  /**
+   * @swagger
+   * /rest/api/boards:
+   *   get:
+   *      summary: Get All Boards
+   *      description: Welcome to boards
+   *      parameters:
+   *        - in: header
+   *          name: X-Access-Token
+   *          schema:
+   *            type: string
+   *          required: true
+   *        - in: query
+   *          name: _start
+   *          schema:
+   *            type: integer
+   *          description: The number of items to skip before starting to collect the result
+   *        - in: query
+   *          name: _end
+   *          schema:
+   *            type: integer
+   *          description: The numbers of items to return
+   *      responses:
+   *        200:
+   *         description: Success
+   */
+
+  /**
+   * GET ALL BOARDS
+   * @param {*} args 
+   * @param {*} opts 
+   */
   this.getMessageBoards = async function (args, opts = {}) {
     const { loggerFactory, requestId } = opts;
 

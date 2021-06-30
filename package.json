@@ -19,7 +19,7 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#8e56beccf30f91c36fed9a3ebb18cc1f3f2fd420",
-    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#0438f83356a7b5bfb5c5a35e5b61b8e65f99e0e1",
+    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#dd8372dc158d437f063989b6d4d3e6720cd60b4e",
     "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#1cf11dd25e5141c2b53462b91d20595a922563bd",
     "winext-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#be19638cbbd0c566d339391fb37352fa0e2579f3",
     "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#6b93ffe34bd91a350c69c11b881d05e3672bcda1",
