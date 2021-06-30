@@ -9,6 +9,7 @@ const dataSecret = require('../../config/data/secret');
 const { isEmpty, get } = lodash;
 function UserService(params = {}) {
   const { dataStore, dataSequelize, errorManager } = params;
+
   // register user
   this.registerUser = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
@@ -41,7 +42,36 @@ function UserService(params = {}) {
       return Promise.reject(err);
     }
   };
-  // login user
+
+  /**
+   * @swagger
+   * /rest/api/user/login:
+   *   post:
+   *      summary: Login User
+   *      description: Welcome to login user
+   *      requestBody: 
+   *          required: true
+   *          content:
+   *            application/json:
+   *                schema:
+   *                  type: object
+   *                  properties:
+   *                      email:
+   *                        type: string
+   *                        default: admin@gmail.com
+   *                      password:
+   *                        type: string
+   *                        default: 123
+   *      responses:
+   *        default:
+   *         description: Login success
+   */
+
+  /**
+   * Login user
+   * @param {*} args 
+   * @param {*} opts 
+   */
   this.loginUser = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
 
@@ -54,7 +84,6 @@ function UserService(params = {}) {
       const testSequelize = await dataSequelize.find({
         type: 'BoardModel',
       })
-      console.log("🚀 ~ file: web-admin-user.js ~ line 57 ~ testSequelize", testSequelize)
 
       /**
        * get user login

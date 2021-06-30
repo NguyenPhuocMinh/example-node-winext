@@ -6,7 +6,7 @@ const protectedPaths = require('../data/protectedPaths');
 const errorCodes = require('../data/errorCodes');
 const secret = require('../data/secret');
 
-const contextPath = '/rest/api';
+const contextPath = process.env.CONTEXT_PATH || '/rest/api';
 
 module.exports = {
   application: {
@@ -28,7 +28,17 @@ module.exports = {
             info: 'bold green',
           }
         },
-        log4js: {}
+        log4js: {
+          appenders: {
+            out: { type: 'stdout' }
+          },
+          categories: {
+            default: {
+              appenders: ['out'],
+              level: 'debug'
+            }
+          }
+        }
       },
       winext_repository: {
         mongoose: {
@@ -65,8 +75,32 @@ module.exports = {
       winext_runserver: {
         enable: false,
         contextPath: contextPath,
-        port: 7979,
-        host: '0.0.0.0',
+        port: process.env.PORT || 7979,
+        host: process.env.HOST || '0.0.0.0',
+        swaggerOptions: {
+          definition: {
+            openapi: '3.0.0',
+            info: {
+              title: 'Docs API',
+              version: '1.0.0',
+            },
+            components: {
+              securitySchemes: {
+                bearerAuth: {
+                  type: "http",
+                  scheme: "bearer",
+                  bearerFormat: "JWT",
+                },
+              },
+              security: [
+                {
+                  bearerAuth: [],
+                },
+              ],
+            },
+          },
+          apis: ['./src/services/*.js'],
+        }
       },
       winext_error_manager: {
         errorCodes: errorCodes
