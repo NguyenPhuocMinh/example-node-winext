@@ -7,6 +7,6 @@ module.exports = [
     pathName: '/contacts',
     method: 'GET',
     methodName: 'contact',
-    serviceName: ContactService,
-  },
-]
+    serviceName: ContactService
+  }
+];

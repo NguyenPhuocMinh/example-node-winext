@@ -21,14 +21,14 @@ module.exports = {
             debug: 1,
             warn: 2,
             data: 3,
-            info: 4,
+            info: 4
           },
           colors: {
             error: 'bold red',
             debug: 'bold blue',
             warn: 'bold yellow',
             data: 'italic magenta',
-            info: 'bold green',
+            info: 'bold green'
           }
         },
         log4js: {
@@ -48,7 +48,7 @@ module.exports = {
           enable: true,
           host: process.env.MONGO_HOST,
           port: process.env.MONGO_PORT,
-          name: process.env.MONGO_DATABASE,
+          name: process.env.MONGO_DATABASE
         },
         mysql: {
           enable: true,
@@ -85,24 +85,24 @@ module.exports = {
             openapi: '3.0.0',
             info: {
               title: 'Docs API',
-              version: '1.0.0',
+              version: '1.0.0'
             },
             components: {
               securitySchemes: {
                 bearerAuth: {
                   type: 'http',
                   scheme: 'bearer',
-                  bearerFormat: 'JWT',
-                },
+                  bearerFormat: 'JWT'
+                }
               },
               security: [
                 {
-                  bearerAuth: [],
-                },
-              ],
-            },
+                  bearerAuth: []
+                }
+              ]
+            }
           },
-          apis: ['./src/services/*.js'],
+          apis: ['./src/services/*.js']
         }
       },
       winext_error_manager: {
@@ -111,6 +111,6 @@ module.exports = {
       winext_mapping_store: {
         routerMappings: routerMappings
       }
-    },
-  },
-}
+    }
+  }
+};

@@ -3,7 +3,7 @@
 const permissions = {
   ADMIN: {
     BOARDS: {
-      GET: 'ADMIN_BOARD_GET',
+      GET: 'ADMIN_BOARD_GET'
     }
   }
 };

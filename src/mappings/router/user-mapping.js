@@ -20,14 +20,14 @@ module.exports = [
           email: req.body.email,
           gender: req.body.gender,
           permissions: req.body.permissions
-        }
+        };
       }
     },
     output: {
       transform: function (response) {
         return {
           body: response
-        }
+        };
       }
     }
   },
@@ -42,7 +42,7 @@ module.exports = [
         return {
           email: req.body.email,
           password: req.body.password
-        }
+        };
       }
     },
     output: {
@@ -52,7 +52,7 @@ module.exports = [
             'X-AccessToken': get(response, 'token')
           },
           body: response
-        }
+        };
       }
     }
   },
@@ -66,7 +66,7 @@ module.exports = [
       transform: function (req) {
         return {
           refreshToken: req.body.refreshToken
-        }
+        };
       }
     },
     output: {
@@ -76,8 +76,8 @@ module.exports = [
             'X-AccessToken': get(response, 'token')
           },
           body: response
-        }
+        };
       }
     }
-  },
-]
+  }
+];

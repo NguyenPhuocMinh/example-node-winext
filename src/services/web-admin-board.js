@@ -36,8 +36,8 @@ function BoardService(params = {}) {
 
   /**
    * GET ALL BOARDS
-   * @param {*} args 
-   * @param {*} opts 
+   * @param {*} args
+   * @param {*} opts
    */
   this.getMessageBoards = async function (args, opts = {}) {
     const { loggerFactory, requestId } = opts;
@@ -65,33 +65,32 @@ function BoardService(params = {}) {
         }
       });
 
-      const data = await convertDataResponse(boards)
+      const data = await convertDataResponse(boards);
 
       const total = await dataStore.count({
         type: 'BoardModel',
         filter: { deleted: false }
-      })
+      });
 
       loggerFactory.debug(`function getMessageBoards end`, {
         requestId: `${requestId}`
       });
 
       return { data: data, total: total };
-
     } catch (err) {
       loggerFactory.error(`function getMessageBoards has error : ${err}`, {
         requestId: `${requestId}`
-      })
+      });
       return Promise.reject(err);
     }
   };
-};
+}
 
 async function convertDataResponse(boards) {
   return Promise.map(boards, (board, index) => {
     return convertDataBoard(board, index);
   }, { concurrency: 5 });
-};
+}
 
 function convertDataBoard(board, index) {
   const response = {};
@@ -110,10 +109,10 @@ function convertDataBoard(board, index) {
   } else {
     return Promise.resolve();
   }
-};
-BoardService.reference = {
-  dataStore: 'app-repository/dataStore',
 }
+BoardService.reference = {
+  dataStore: 'app-repository/dataStore'
+};
 
 exports = module.exports = new BoardService();
 exports.register = BoardService;

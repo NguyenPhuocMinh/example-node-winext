@@ -12,4 +12,4 @@ module.exports = [
     pathName: '/boards',
     permission: permissions.ADMIN.BOARDS.GET
   }
-]
+];

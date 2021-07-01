@@ -12,7 +12,7 @@ module.exports = [
       transform: function (req) {
         return {
           params: req.query
-        }
+        };
       }
     },
     output: {
@@ -23,8 +23,8 @@ module.exports = [
             'Access-Control-Expose-Headers': 'X-Total-Count'
           },
           body: { result: response.data, total: response.total }
-        }
+        };
       }
     }
-  },
-]
+  }
+];

@@ -1,7 +1,6 @@
 'use strict';
 
 function ContactService(params = {}) {
-
   /**
    * @swagger
    * /rest/api/contacts:
@@ -20,14 +19,14 @@ function ContactService(params = {}) {
    */
 
   /**
-   * 
-   * @param {*} args 
-   * @param {*} opts 
+   *
+   * @param {*} args
+   * @param {*} opts
    */
   this.contact = async function (args, opts = {}) {
-    return { message: 'Hello NodeJs' }
-  }
-};
+    return { message: 'Hello NodeJs' };
+  };
+}
 
 exports = module.exports = new ContactService();
 exports.register = ContactService;

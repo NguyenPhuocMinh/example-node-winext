@@ -27,5 +27,12 @@
     "winext-mapping-store": "git+https://github.com/NguyenPhuocMinh/winext-mapping-store.git#98d30a752dbf83ef53e6b9a3185933d78793e3f8",
     "model-mongo": "git+https://github.com/NguyenPhuocMinh/example-model-mongo.git#4b20a6d00f2a1b4b836f9935877d2240f096a685",
     "model-sql": "git+https://github.com/NguyenPhuocMinh/example-model-sql.git#398a19b365d0f31ec073ac0987480b2c82770f0f"
+  },
+  "devDependencies": {
+    "eslint": "^7.29.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.23.4",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0"
   }
 }

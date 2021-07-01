@@ -16,7 +16,7 @@ function UserService(params = {}) {
    *   post:
    *      summary: Register User
    *      description: Welcome to register user
-   *      requestBody: 
+   *      requestBody:
    *          required: true
    *          content:
    *            application/json:
@@ -51,8 +51,8 @@ function UserService(params = {}) {
 
   /**
    * REGISTER USER
-   * @param {*} args 
-   * @param {*} opts 
+   * @param {*} args
+   * @param {*} opts
    */
   this.registerUser = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
@@ -68,7 +68,7 @@ function UserService(params = {}) {
       if (isEmpty(args.password)) {
         password = '123';
       } else {
-        password = args.password
+        password = args.password;
       }
       const salt = await bcrypt.genSalt(10);
       args.password = await bcrypt.hash(password, salt);
@@ -79,7 +79,6 @@ function UserService(params = {}) {
       });
 
       return { message: 'Register user successfully!' };
-
     } catch (err) {
       loggerFactory.error(`function registerUsers has error : ${err}`, { requestId: `${requestId}` });
       return Promise.reject(err);
@@ -92,7 +91,7 @@ function UserService(params = {}) {
    *   post:
    *      summary: Login User
    *      description: Welcome to login user
-   *      requestBody: 
+   *      requestBody:
    *          required: true
    *          content:
    *            application/json:
@@ -112,8 +111,8 @@ function UserService(params = {}) {
 
   /**
    * LOGIN USER
-   * @param {*} args 
-   * @param {*} opts 
+   * @param {*} args
+   * @param {*} opts
    */
   this.loginUser = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
@@ -125,8 +124,9 @@ function UserService(params = {}) {
       });
 
       const testSequelize = await dataSequelize.find({
-        type: 'BoardModel',
-      })
+        type: 'BoardModel'
+      });
+      console.log('🚀 ~ file: web-admin-user.js ~ line 129 ~ testSequelize', testSequelize);
 
       /**
        * get user login
@@ -136,7 +136,7 @@ function UserService(params = {}) {
         filter: {
           email: args.email
         }
-      })
+      });
       if (!userLogin) {
         throw errorManager.errorBuilder('EmailNotFound');
       }
@@ -151,14 +151,14 @@ function UserService(params = {}) {
        * create token
        */
       const token = jwt.sign({ userLogin }, dataSecret.tokenSecret, {
-        expiresIn: dataSecret.tokenLife,
+        expiresIn: dataSecret.tokenLife
       });
       /**
        * create refresh token
        */
       const refreshToken = jwt.sign({ userLogin }, dataSecret.refreshTokenSecret, {
         expiresIn: dataSecret.refreshTokenLife
-      })
+      });
 
       loggerFactory.debug('function loginUser end', {
         requestId: `${requestId}`,
@@ -172,9 +172,9 @@ function UserService(params = {}) {
         refreshToken: refreshToken,
         expiresIn: dataSecret.tokenLife,
         id: userLogin.id,
-        name: userLogin.firstName + " " + userLogin.lastName,
-        permissions: userLogin.permissions,
-      }
+        name: userLogin.firstName + ' ' + userLogin.lastName,
+        permissions: userLogin.permissions
+      };
     } catch (err) {
       loggerFactory.error(`function loginUser has error`, {
         requestId: `${requestId}`,
@@ -190,7 +190,7 @@ function UserService(params = {}) {
    *   post:
    *      summary: Refresh token
    *      description: Welcome to refresh token user
-   *      requestBody: 
+   *      requestBody:
    *          required: true
    *          content:
    *            application/json:
@@ -206,8 +206,8 @@ function UserService(params = {}) {
 
   /**
    * REFRESH TOKEN
-   * @param {*} args 
-   * @param {*} opts 
+   * @param {*} args
+   * @param {*} opts
    */
   this.refreshTokenHandler = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
@@ -217,7 +217,6 @@ function UserService(params = {}) {
     const { refreshToken } = args;
 
     try {
-
       loggerFactory.debug(`function refreshTokenHandler start with args`, {
         requestId: `${requestId}`,
         args: { refreshToken }
@@ -238,14 +237,14 @@ function UserService(params = {}) {
            * post new token
            */
           newToken = jwt.sign({ userLogin }, dataSecret.tokenSecret, {
-            expiresIn: dataSecret.tokenLife,
-          })
+            expiresIn: dataSecret.tokenLife
+          });
           /**
            * post new refresh token
            */
           newRefreshToken = jwt.sign({ userLogin }, dataSecret.refreshTokenSecret, {
             expiresIn: dataSecret.refreshTokenLife
-          })
+          });
         } else {
           throw new Error(err.message);
         }
@@ -264,10 +263,9 @@ function UserService(params = {}) {
         refreshToken: newRefreshToken,
         expiresIn: dataSecret.tokenLife,
         id: userLogin.id,
-        name: userLogin.firstName + " " + userLogin.lastName,
-        permissions: userLogin.permissions,
-      }
-
+        name: userLogin.firstName + ' ' + userLogin.lastName,
+        permissions: userLogin.permissions
+      };
     } catch (err) {
       loggerFactory.error(`function refreshToken has error`, {
         requestId: `${requestId}`,
@@ -276,13 +274,13 @@ function UserService(params = {}) {
       return Promise.reject(err);
     }
   };
-};
+}
 
 UserService.reference = {
   dataStore: 'app-repository/dataStore',
   dataSequelize: 'app-repository/dataSequelize',
   errorManager: 'app-error-manager/errorManager'
-}
+};
 
 exports = module.exports = new UserService();
 exports.register = UserService;

@@ -16,7 +16,7 @@ const app = winext.initializer(sandbox,
     mongo: 'model-mongo',
     sql: 'model-sql'
   }
-)
+);
 
 if (require.main === module) {
   app.server.start();
