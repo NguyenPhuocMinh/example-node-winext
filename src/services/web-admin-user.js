@@ -183,7 +183,32 @@ function UserService(params = {}) {
       return Promise.reject(err);
     }
   };
-  // refresh token
+
+  /**
+   * @swagger
+   * /rest/api/user/refreshTokens:
+   *   post:
+   *      summary: Refresh token
+   *      description: Welcome to refresh token user
+   *      requestBody: 
+   *          required: true
+   *          content:
+   *            application/json:
+   *                schema:
+   *                  type: object
+   *                  properties:
+   *                      refreshToken:
+   *                        type: string
+   *      responses:
+   *        default:
+   *         description: Refresh token success
+   */
+
+  /**
+   * REFRESH TOKEN
+   * @param {*} args 
+   * @param {*} opts 
+   */
   this.refreshTokenHandler = async function (args, opts) {
     const { loggerFactory, requestId } = opts;
     /**

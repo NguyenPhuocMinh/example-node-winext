@@ -1,12 +1,15 @@
 'use strict';
 
+const winext = require('winext');
+const dotenv = winext.require('dotenv');
 const routerMappings = require('../../src/mappings');
 const publicPaths = require('../data/publicPaths');
 const protectedPaths = require('../data/protectedPaths');
 const errorCodes = require('../data/errorCodes');
 const secret = require('../data/secret');
+dotenv.config();
 
-const contextPath = process.env.CONTEXT_PATH || '/rest/api';
+const contextPath = process.env.CONTEXT_PATH;
 
 module.exports = {
   application: {
@@ -43,17 +46,17 @@ module.exports = {
       winext_repository: {
         mongoose: {
           enable: true,
-          host: 'localhost',
-          port: '27017',
-          name: 'message-board',
+          host: process.env.MONGO_HOST,
+          port: process.env.MONGO_PORT,
+          name: process.env.MONGO_DATABASE,
         },
         mysql: {
           enable: true,
-          host: 'localhost',
-          port: 3306,
-          user: 'root',
-          password: 'Minhroot123!',
-          name: 'message_board',
+          host: process.env.SQL_HOST,
+          port: process.env.SQL_PORT,
+          user: process.env.SQL_USER,
+          password: process.env.SQL_PASSWORD,
+          name: process.env.SQL_DATABASE,
           sequelizeOptions: {
             dialect: 'mysql',
             pool: {
@@ -75,8 +78,8 @@ module.exports = {
       winext_runserver: {
         enable: false,
         contextPath: contextPath,
-        port: process.env.PORT || 7979,
-        host: process.env.HOST || '0.0.0.0',
+        port: process.env.PORT,
+        host: process.env.HOST,
         swaggerOptions: {
           definition: {
             openapi: '3.0.0',
@@ -87,9 +90,9 @@ module.exports = {
             components: {
               securitySchemes: {
                 bearerAuth: {
-                  type: "http",
-                  scheme: "bearer",
-                  bearerFormat: "JWT",
+                  type: 'http',
+                  scheme: 'bearer',
+                  bearerFormat: 'JWT',
                 },
               },
               security: [
@@ -106,7 +109,7 @@ module.exports = {
         errorCodes: errorCodes
       },
       winext_mapping_store: {
-        routerMappings: routerMappings,
+        routerMappings: routerMappings
       }
     },
   },
