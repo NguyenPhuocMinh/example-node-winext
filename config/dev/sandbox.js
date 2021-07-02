@@ -78,8 +78,8 @@ module.exports = {
       winext_runserver: {
         enable: false,
         contextPath: contextPath,
-        port: process.env.PORT,
-        host: process.env.HOST,
+        port: process.env.SERVER_PORT,
+        host: process.env.SERVER_HOST,
         swaggerOptions: {
           definition: {
             openapi: '3.0.0',
