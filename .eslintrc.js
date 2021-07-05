@@ -14,7 +14,7 @@ module.exports = {
     'for-direction': 'error',
     'no-await-in-loop': 'error',
     'no-compare-neg-zero': 'error',
-    semi: [
+    'semi': [
       'error',
       'always'
     ],
@@ -24,7 +24,7 @@ module.exports = {
       asyncArrow: 'always'
     }
     ],
-    quotes: [
+    'quotes': [
       'error',
       'single', {
         allowTemplateLiterals: true
@@ -41,6 +41,7 @@ module.exports = {
       {
         allowImplicit: true
       }
-    ]
+    ],
+    'quote-props': ['error', 'consistent']
   }
 };

@@ -8,5 +8,5 @@ module.exports = [
   {
     method: 'POST',
     pathName: '/user/refreshTokens'
-  },
-]
+  }
+];

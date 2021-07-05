@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
   "keywords": [
@@ -18,13 +17,13 @@
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#5c42bcb7d363c86d066dcb3d8e9535d4f54d793d",
-    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#b8a890757e2ec17ff4866e29e2549ca71bb6e809",
-    "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#d43ddea12d191e83506a42cabfeddc1dcf278cb5",
+    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#9285c0176563b149f4f727cbfc8db4fef5d72af6",
+    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#57e1c9f2fdde02cdce54735eaf8a29cf77de3ad8",
+    "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#d6545ad55459d716303a80c49978d939740349b7",
     "winext-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#f5bcc0e0a6f2c102bf2eab338948ea88b5af4418",
-    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#0baa1afeb2d1b12620de171897b199ca59dd349a",
-    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#25d977900130757cbdad8d57a039f7669191630d",
-    "winext-mapping-store": "git+https://github.com/NguyenPhuocMinh/winext-mapping-store.git#700ba298bda73f56e2a5e617e0e54c7ef616845c",
+    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#c3e80ae8c382257d2e20c9124a772347d447c6b4",
+    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#b33fd1617da01a8a8c3631dc6df1ff4cf691cbe4",
+    "winext-mapping-store": "git+https://github.com/NguyenPhuocMinh/winext-mapping-store.git#9320b0163f871ed6d307126c51a10794f485a0ce",
     "model-mongo": "git+https://github.com/NguyenPhuocMinh/example-model-mongo.git#4b20a6d00f2a1b4b836f9935877d2240f096a685",
     "model-sql": "git+https://github.com/NguyenPhuocMinh/example-model-sql.git#398a19b365d0f31ec073ac0987480b2c82770f0f"
   },
