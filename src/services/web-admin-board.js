@@ -4,6 +4,7 @@ const winext = require('winext');
 const Promise = winext.require('bluebird');
 const lodash = winext.require('lodash');
 const { isEmpty } = lodash;
+
 function BoardService(params = {}) {
   const { dataStore } = params;
 

@@ -7,6 +7,7 @@ const jwt = require('winext-authorization').jwt;
 const bcrypt = require('bcryptjs');
 const dataSecret = require('../../config/data/secret');
 const { isEmpty, get } = lodash;
+
 function UserService(params = {}) {
   const { dataStore, dataSequelize, errorManager } = params;
 
