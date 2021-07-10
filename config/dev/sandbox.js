@@ -2,11 +2,14 @@
 
 const winext = require('winext');
 const dotenv = winext.require('dotenv');
+const ip = winext.require('ip');
 const routerMappings = require('../../src/mappings');
+const enablePaths = require('../data/enablePaths');
 const publicPaths = require('../data/publicPaths');
 const protectedPaths = require('../data/protectedPaths');
 const errorCodes = require('../data/errorCodes');
 const secret = require('../data/secret');
+const address = ip.address();
 dotenv.config();
 
 const contextPath = process.env.CONTEXT_PATH;
@@ -72,6 +75,7 @@ module.exports = {
         enable: true,
         secretKey: secret.tokenSecret,
         contextPath: contextPath,
+        enablePaths: enablePaths,
         publicPaths: publicPaths,
         protectedPaths: protectedPaths
       },
@@ -103,6 +107,26 @@ module.exports = {
             }
           },
           apis: ['./src/services/*.js']
+        }
+      },
+      winext_service_registry: {
+        consul: {
+          enable: false,
+          init: {
+            host: process.env.CONSUL_HOST || address,
+            port: process.env.CONSUL_PORT || 8500, // default port for consul
+            promisify: true
+          },
+          register: {
+            id: process.env.SERVICE_ID,
+            name: process.env.SERVICE_NAME,
+            port: process.env.PORT || 8081,
+            check: {
+              http: `http://${process.env.CONSUL_HOST || address}:${process.env.SERVER_PORT}${contextPath}/healths`,
+              interval: '20s',
+              timeout: '10s'
+            }
+          }
         }
       },
       winext_error_manager: {

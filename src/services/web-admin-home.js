@@ -1,12 +1,12 @@
 'use strict';
 
-function ContactService(params = {}) {
+function HomeService(params = {}) {
   /**
    * @swagger
-   * /rest/api/contacts:
+   * /rest/api/:
    *   get:
-   *      summary: Get Contact
-   *      description: Welcome to contact
+   *      summary: Home Page
+   *      description: Welcome to home admin
    *      parameters:
    *        - in: header
    *          name: X-Access-Token
@@ -19,14 +19,14 @@ function ContactService(params = {}) {
    */
 
   /**
-   * CONTACT
+   * HOME
    * @param {*} args
    * @param {*} opts
    */
-  this.contact = async function (args, opts = {}) {
-    return { message: 'Hello NodeJs' };
+  this.home = function (args, opts = {}) {
+    return { message: 'Welcome to home user admin page' };
   };
 }
 
-exports = module.exports = new ContactService();
-exports.register = ContactService;
+exports = module.exports = new HomeService();
+exports.register = HomeService;

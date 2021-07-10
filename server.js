@@ -10,7 +10,8 @@ const app = winext.initializer(sandbox,
     'winext-repository',
     'winext-authorization',
     'winext-runserver',
-    'winext-mapping-store'
+    'winext-mapping-store',
+    'winext-service-registry'
   ],
   {
     mongo: 'model-mongo',

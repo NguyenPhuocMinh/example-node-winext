@@ -4,7 +4,7 @@ const permissions = require('./permissions');
 
 module.exports = [
   /**
-   *  BOARDS
+   * BOARDS
    */
   {
     enable: true,

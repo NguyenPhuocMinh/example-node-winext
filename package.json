@@ -1,7 +1,7 @@
 {
   "name": "example-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Building service with node",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -11,19 +11,23 @@
     "winext-logger",
     "winext-authorization",
     "winext-repository",
-    "winext-runserver"
+    "winext-runserver",
+    "winext-mapping-store",
+    "winext-error-manager",
+    "winext-service-registry"
   ],
   "author": "Minh Nguyễn",
   "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#9285c0176563b149f4f727cbfc8db4fef5d72af6",
-    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#42985ba52dd132d78a08aca80f6699c3d3f35106",
-    "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#d6545ad55459d716303a80c49978d939740349b7",
-    "winext-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#f5bcc0e0a6f2c102bf2eab338948ea88b5af4418",
-    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#e9d66bc73c793be45d198efed731aabd8766c8e0",
-    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#dbde818ac530ce30fc73eea6e70d9aacb1863e75",
-    "winext-mapping-store": "git+https://github.com/NguyenPhuocMinh/winext-mapping-store.git#aa7d66dd739cd9ef000b0a0a4a6a9f756460e576",
+    "winext": "git+https://github.com/NguyenPhuocMinh/winext.git#4be2751c69fa3ab8d352e46e39df5f364b4e139d",
+    "winext-authorization": "git+https://github.com/NguyenPhuocMinh/winext-authorization.git#1cf10bc6f6c31657f53823c6a25fa4d26e3f607a",
+    "winext-error-manager": "git+https://github.com/NguyenPhuocMinh/winext-error-manager.git#b17af858f84bdfe8c7300253c5b0cd60a9ca14bc",
+    "winext-logger": "git+https://github.com/NguyenPhuocMinh/winext-logger.git#abd5b1a4cb227e0236b3d8b42af24fee5911c997",
+    "winext-repository": "git+https://github.com/NguyenPhuocMinh/winext-repository.git#0dd4e0ec875cd6b71819fa2d8960a9d8083a1a57",
+    "winext-runserver": "git+https://github.com/NguyenPhuocMinh/winext-runserver.git#c0cf36f81f28748f75994c7b7b07fa313e571565",
+    "winext-mapping-store": "git+https://github.com/NguyenPhuocMinh/winext-mapping-store.git#e22f51579e67d5272f382d550a4a1ac4eb3734f4",
+    "winext-service-registry": "git+https://github.com/NguyenPhuocMinh/winext-service-registry.git#05753de088948920ca690bf5c841e528192c29d5",
     "model-mongo": "git+https://github.com/NguyenPhuocMinh/example-model-mongo.git#4b20a6d00f2a1b4b836f9935877d2240f096a685",
     "model-sql": "git+https://github.com/NguyenPhuocMinh/example-model-sql.git#398a19b365d0f31ec073ac0987480b2c82770f0f"
   },
