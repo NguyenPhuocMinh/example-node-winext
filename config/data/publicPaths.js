@@ -13,7 +13,7 @@ module.exports = [
    * CONTACT
    */
   {
-    enable: false,
+    enable: true,
     method: 'GET',
     pathName: '/contacts'
   },

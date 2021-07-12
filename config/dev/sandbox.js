@@ -46,6 +46,60 @@ module.exports = {
           }
         }
       },
+      winext_api_gateway: {
+        kong: {
+          enable: true,
+          port: process.env.KONG_ADMIN_PORT || 8001,
+          service: {
+            name: process.env.SERVICE_NAME,
+            url: `http://${address}:${process.env.SERVER_PORT}/rest/api/`
+          },
+          route: {
+            name: process.env.SERVICE_NAME,
+            service: {
+              name: process.env.SERVICE_NAME
+            },
+            hosts: [address],
+            paths: ['/user-service'],
+            methods: ['GET', 'POST']
+          },
+          consumer: {
+            username: 'Minh'
+          },
+          plugin: {
+            name: 'key-auth',
+            config: {
+              key_names: ['x-gateway-key'],
+              key_in_header: true,
+              key_in_body: false,
+              key_in_query: false
+            },
+            route: {
+              name: process.env.SERVICE_NAME
+            }
+          },
+        }
+      },
+      winext_service_registry: {
+        consul: {
+          enable: true,
+          init: {
+            host: process.env.CONSUL_HOST || address,
+            port: process.env.CONSUL_PORT || 8500, // default port for consul
+            promisify: true
+          },
+          register: {
+            id: process.env.SERVICE_ID,
+            name: process.env.SERVICE_NAME,
+            port: process.env.PORT || 8081,
+            check: {
+              http: `http://${process.env.CONSUL_HOST || address}:${process.env.SERVER_PORT}${contextPath}/healths`,
+              interval: '60s',
+              timeout: '20s'
+            }
+          }
+        }
+      },
       winext_repository: {
         mongoose: {
           enable: true,
@@ -107,26 +161,6 @@ module.exports = {
             }
           },
           apis: ['./src/services/*.js']
-        }
-      },
-      winext_service_registry: {
-        consul: {
-          enable: false,
-          init: {
-            host: process.env.CONSUL_HOST || address,
-            port: process.env.CONSUL_PORT || 8500, // default port for consul
-            promisify: true
-          },
-          register: {
-            id: process.env.SERVICE_ID,
-            name: process.env.SERVICE_NAME,
-            port: process.env.PORT || 8081,
-            check: {
-              http: `http://${process.env.CONSUL_HOST || address}:${process.env.SERVER_PORT}${contextPath}/healths`,
-              interval: '20s',
-              timeout: '10s'
-            }
-          }
         }
       },
       winext_error_manager: {
