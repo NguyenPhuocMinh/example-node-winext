@@ -31,3 +31,7 @@ SQL_DATABASE=DATABASE_NAME
 
 ### Docs Api Using Swagger
   - http://localhost:9999/api-docs
+
+### Connect to Api Gateway with Kong and Service registry with Consul
+  - [Api Gateway](https://github.com/NguyenPhuocMinh/microservice-node/tree/master/api-gateway)
+  - [Service registry](https://github.com/NguyenPhuocMinh/microservice-node/tree/master/service-registry)
