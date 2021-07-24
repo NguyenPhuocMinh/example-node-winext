@@ -31,7 +31,6 @@
 │       ├── web-admin-health-check.js
 │       ├── web-admin-home.js
 │       └── web-admin-user.js
-|
 ```
 
 #### Step 1: install
