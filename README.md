@@ -1,5 +1,39 @@
 ## Building api node js Using express custom
 
+## Structure
+```
+.
+├── README.md
+├── config
+│   ├── data
+│   │   ├── enablePaths.js
+│   │   ├── errorCodes.js
+│   │   ├── permissions.js
+│   │   ├── protectedPaths.js
+│   │   ├── publicPaths.js
+│   │   └── secret.js
+│   └── dev
+│       └── sandbox.js
+├── package.json
+├── server.js
+├── src
+│   ├── mappings
+│   │   ├── index.js
+│   │   └── router
+│   │       ├── board-mapping.js
+│   │       ├── contact-mapping.js
+│   │       ├── health-check-mapping.js
+│   │       ├── home-mapping.js
+│   │       └── user-mapping.js
+│   └── services
+│       ├── web-admin-board.js
+│       ├── web-admin-contact.js
+│       ├── web-admin-health-check.js
+│       ├── web-admin-home.js
+│       └── web-admin-user.js
+|
+```
+
 #### Step 1: install
 ```sh
   - cd example-node-winext and npm install

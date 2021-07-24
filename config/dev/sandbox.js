@@ -48,7 +48,7 @@ module.exports = {
       },
       winext_api_gateway: {
         kong: {
-          enable: true,
+          enable: false,
           port: process.env.KONG_ADMIN_PORT || 8001,
           service: {
             name: process.env.SERVICE_NAME,
@@ -94,8 +94,8 @@ module.exports = {
             port: process.env.PORT || 8081,
             check: {
               http: `http://${process.env.CONSUL_HOST || address}:${process.env.SERVER_PORT}${contextPath}/healths`,
-              interval: '60s',
-              timeout: '20s'
+              interval: '10s',
+              timeout: '3s'
             }
           }
         }
