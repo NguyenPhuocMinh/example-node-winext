@@ -4,10 +4,15 @@ const errorCodes = {
   EmailNotFound: {
     message: 'Email not found',
     returnCode: 3001,
-    statusCode: 400
+    statusCode: 404
+  },
+  DuplicateEmailRegister: {
+    message: 'Duplicate email',
+    returnCode: 3001,
+    statusCode: 409
   },
   InValidPassword: {
-    message: 'Pass word invalid',
+    message: 'Password invalid',
     returnCode: 3002,
     statusCode: 400
   },

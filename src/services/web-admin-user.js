@@ -64,6 +64,13 @@ function UserService(params = {}) {
         args: args
       });
 
+      // check duplicate email
+      const isDuplicateEmail = await checkDuplicateEmail(args.email, dataStore);
+
+      if (isDuplicateEmail) {
+        throw errorManager.errorBuilder('DuplicateEmailRegister');
+      }
+
       // Hash Password
       let password = '';
       if (isEmpty(args.password)) {
@@ -282,6 +289,17 @@ function UserService(params = {}) {
       return Promise.reject(err);
     }
   };
+}
+
+async function checkDuplicateEmail(email, dataStore) {
+  const isDuplicate = await dataStore.count({
+    type: 'UserModel',
+    filter: {
+      email: email
+    }
+  });
+
+  return isDuplicate >= 1 ? true : false;
 }
 
 UserService.reference = {
