@@ -29,7 +29,7 @@
     "winext-mapping-store": "git+https://github.com/NguyenPhuocMinh/winext-mapping-store.git#5ec39f73f04ee4008fe52763681d3a23a7ed1f5b",
     "winext-service-registry": "git+https://github.com/NguyenPhuocMinh/winext-service-registry.git#6b7cc0ed65b242e6df6fcc321e63d0e348424ca0",
     "winext-api-gateway": "git+https://github.com/NguyenPhuocMinh/winext-api-gateway.git#8508562d08b73659ffa72a5144581f57a2fda633",
-    "model-mongo": "git+https://github.com/NguyenPhuocMinh/example-model-mongo.git#4b20a6d00f2a1b4b836f9935877d2240f096a685",
+    "model-mongo": "git+https://github.com/NguyenPhuocMinh/example-model-mongo.git#ed3ae792e1ad2df8bbad5d14e077428b3565c5ef",
     "model-sql": "git+https://github.com/NguyenPhuocMinh/example-model-sql.git#398a19b365d0f31ec073ac0987480b2c82770f0f"
   },
   "devDependencies": {

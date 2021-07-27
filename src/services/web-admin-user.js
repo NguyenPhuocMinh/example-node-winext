@@ -127,7 +127,7 @@ function UserService(params = {}) {
       const testSequelize = await dataSequelize.find({
         type: 'BoardModel'
       });
-      console.log('🚀 ~ file: web-admin-user.js ~ line 129 ~ testSequelize', testSequelize);
+      // console.log('🚀 ~ file: web-admin-user.js ~ line 129 ~ testSequelize', testSequelize);
 
       /**
        * get user login
@@ -136,8 +136,15 @@ function UserService(params = {}) {
         type: 'UserModel',
         filter: {
           email: args.email
-        }
+        },
+        populates: [
+          {
+            path: 'roles',
+            select: 'name'
+          }
+        ]
       });
+      console.log("🚀 ~ file: web-admin-user.js ~ line 147 ~ userLogin", userLogin)
       if (!userLogin) {
         throw errorManager.errorBuilder('EmailNotFound');
       }

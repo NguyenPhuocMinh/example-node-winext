@@ -82,7 +82,7 @@ module.exports = {
       },
       winext_service_registry: {
         consul: {
-          enable: true,
+          enable: false,
           init: {
             host: process.env.CONSUL_HOST || address,
             port: process.env.CONSUL_PORT || 8500, // default port for consul
