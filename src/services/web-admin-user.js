@@ -151,7 +151,7 @@ function UserService(params = {}) {
           }
         ]
       });
-      console.log("🚀 ~ file: web-admin-user.js ~ line 147 ~ userLogin", userLogin)
+
       if (!userLogin) {
         throw errorManager.errorBuilder('EmailNotFound');
       }
