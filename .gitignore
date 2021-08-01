@@ -3,4 +3,5 @@ package-lock.json
 .DS_Store
 .env
 /build
-tree.text
+tree.txt
+/data-mongo

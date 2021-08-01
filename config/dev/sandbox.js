@@ -108,7 +108,7 @@ module.exports = {
           name: process.env.MONGO_DATABASE
         },
         mysql: {
-          enable: true,
+          enable: false,
           host: process.env.SQL_HOST,
           port: process.env.SQL_PORT,
           user: process.env.SQL_USER,

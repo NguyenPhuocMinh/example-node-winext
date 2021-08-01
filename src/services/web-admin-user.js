@@ -131,9 +131,9 @@ function UserService(params = {}) {
         args: args
       });
 
-      const testSequelize = await dataSequelize.find({
-        type: 'BoardModel'
-      });
+      // const testSequelize = await dataSequelize.find({
+      //   type: 'BoardModel'
+      // });
       // console.log('🚀 ~ file: web-admin-user.js ~ line 129 ~ testSequelize', testSequelize);
 
       /**

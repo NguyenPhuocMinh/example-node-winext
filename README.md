@@ -14,6 +14,9 @@
 │   │   └── secret.js
 │   └── dev
 │       └── sandbox.js
+├── Dockerfile
+├── docker-compose.yml
+├── package-lock.json
 ├── package.json
 ├── server.js
 ├── src
@@ -31,6 +34,7 @@
 │       ├── web-admin-health-check.js
 │       ├── web-admin-home.js
 │       └── web-admin-user.js
+└── ...
 ```
 
 #### Step 1: install
@@ -46,12 +50,12 @@ PORT=9999
 CONTEXT_PATH=/rest/api
 
 #Mongoose
-MONGO_HOST=localhost
+MONGO_HOST=localhost if use docker then change localhost to YourIpAddress
 MONGO_PORT=27017
 MONGO_DATABASE=DATABASE_NAME
 
 #Sql
-SQL_HOST=localhost
+SQL_HOST=localhost if use docker then change localhost to mysql
 SQL_PORT=3306
 SQL_USER=USER
 SQL_PASSWORD=PASSWORD
@@ -80,3 +84,11 @@ KONG_PORT=8001
 ### Connect to Api Gateway with Kong and Service registry with Consul
   - [Api Gateway](https://github.com/NguyenPhuocMinh/microservice-node/tree/master/api-gateway)
   - [Service registry](https://github.com/NguyenPhuocMinh/microservice-node/tree/master/service-registry)
+
+#### Run build docker
+
+```bash
+  - cd example-node-winext and run docker-compose up -d
+  - shut down docker: docker-compose down
+  - pre-build: run docker-compose build and docker-compose up -d
+```
