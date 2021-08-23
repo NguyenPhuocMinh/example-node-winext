@@ -1,6 +1,6 @@
 FROM node:alpine
 
-WORKDIR /app
+WORKDIR /appcl
 
 ENV NODE_ENV=production
 
